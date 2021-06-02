@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainScreenFragment">
+    <fragment
+        android:id="@+id/mainScreenFragment"
+        android:name="com.example.diaryapplication.mainscreen.MainScreenFragment"
+        android:label="fragment_main_screen"
+        tools:layout="@layout/fragment_main_screen" >
+        <action
+            android:id="@+id/action_mainScreenFragment_to_projectListFragment"
+            app:destination="@id/projectListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/projectListFragment"
+        android:name="com.example.diaryapplication.ProjectsList.ProjectListFragment"
+        android:label="ProjectListFragment" >
+        <action
+            android:id="@+id/action_projectListFragment_to_editProjectFragment"
+            app:destination="@id/editProjectFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editProjectFragment"
+        android:name="com.example.diaryapplication.editproject.EditProjectFragment"
+        android:label="fragment_edit_project"
+        tools:layout="@layout/fragment_edit_project" />
+</navigation>
