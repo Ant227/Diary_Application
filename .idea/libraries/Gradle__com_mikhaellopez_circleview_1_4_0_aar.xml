@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: com.mikhaellopez:circleview:1.4.0@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/214aff600f5508c7818b75db8d114eef/jetified-circleview-1.4.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/214aff600f5508c7818b75db8d114eef/jetified-circleview-1.4.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/214aff600f5508c7818b75db8d114eef/jetified-circleview-1.4.0/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.mikhaellopez/circleview/1.4.0/aa1d45edced9214f5aa78072e5f9ae8a75637a38/circleview-1.4.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

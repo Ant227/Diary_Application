@@ -3,92 +3,201 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".editproject.EditProjectFragment">
+
+        <EditText
+            android:id="@+id/project_name_edit_text"
+            style="@style/TextAppearance.AppCompat.Body2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:autofillHints=""
+            android:hint="@string/project_name"
+            android:inputType="text"
+            android:padding="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <HorizontalScrollView
+            android:id="@+id/horizontal_scrollView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:context=".editproject.EditProjectFragment">
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/project_name_edit_text">
 
             <RadioGroup
-                android:layout_width="match_parent"
+                android:id="@+id/area_radioGroup"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textView">
+                android:layout_marginEnd="16dp"
+                android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/header"
+                    android:id="@+id/area_header"
+                    style="@style/TextAppearance.AppCompat.SearchResult.Subtitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
                     android:padding="8dp"
-                    style="@style/TextAppearance.AppCompat.SearchResult.Subtitle"
-                    android:text="Area" />
+                    android:text="@string/area" />
 
-                <GridLayout
-                    android:layout_width="match_parent"
+                <RadioButton
+                    android:id="@+id/life_radioButton"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginEnd="16dp"
-                    android:columnCount="3">
+                    android:text="@string/life" />
 
-                    <RadioButton
-                        android:id="@+id/life_radioButton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/life"
-                        android:layout_columnWeight="1"/>
+                <RadioButton
+                    android:id="@+id/worth_radioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/worth" />
 
-                    <RadioButton
-                        android:id="@+id/worth_radioButton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/worth"
-                        android:layout_columnWeight="1"/>
+                <RadioButton
+                    android:id="@+id/money_radioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/money" />
 
-                    <RadioButton
-                        android:id="@+id/money_radioButton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Type two"
-                        android:layout_columnWeight="1"/>
+                <RadioButton
+                    android:id="@+id/health_radioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/health" />
 
-                    <RadioButton
-                        android:id="@+id/health_radioButton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Type three"
-                        android:layout_columnWeight="1"/>
+                <RadioButton
+                    android:id="@+id/hangout_radio_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hangout"
+                    android:layout_marginEnd="16dp"/>
 
-                    <RadioButton
-                        android:id="@+id/hangout_radio_button"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/hangout"
-                        android:layout_columnWeight="1"/>
-
-
-                </GridLayout>
 
             </RadioGroup>
+        </HorizontalScrollView>
 
-            <EditText
-                android:id="@+id/textView"
-                android:layout_width="0dp"
+
+
+        <RadioGroup
+            android:id="@+id/status_radio_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/horizontal_scrollView">
+
+            <TextView
+                android:id="@+id/status_header"
+                style="@style/TextAppearance.AppCompat.SearchResult.Subtitle"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
                 android:padding="8dp"
-                android:hint="@string/project_name"
-                style="@style/TextAppearance.AppCompat.Body2"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:inputType="text" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.core.widget.NestedScrollView>
+                android:text="@string/status" />
+
+            <RadioButton
+                android:id="@+id/ongoing_radioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/ongoing" />
+
+            <RadioButton
+                android:id="@+id/done_radioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/done" />
+
+            <RadioButton
+                android:id="@+id/hold_radioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/hold" />
+        </RadioGroup>
+
+
+
+
+
+
+        <Button
+            android:id="@+id/create_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/create"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/color_chip_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:singleSelection="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/status_radio_group">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/green_chip"
+                android:layout_width="58dp"
+                android:layout_height="50dp"
+                app:chipBackgroundColor="#4CD964"
+                style="@style/Widget.MaterialComponents.Chip.Filter" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/orange_chip"
+                android:layout_width="58dp"
+                android:layout_height="50dp"
+                app:chipBackgroundColor="#FF9500"
+                style="@style/Widget.MaterialComponents.Chip.Filter" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/yellow_chip"
+                android:layout_width="58dp"
+                android:layout_height="50dp"
+                app:chipBackgroundColor="#FFCC00"
+                style="@style/Widget.MaterialComponents.Chip.Filter"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/dark_blue_chip"
+                android:layout_width="58dp"
+                android:layout_height="50dp"
+                app:chipBackgroundColor="#000099"
+                style="@style/Widget.MaterialComponents.Chip.Filter"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/red_chip"
+                android:layout_width="58dp"
+                android:layout_height="50dp"
+                app:chipBackgroundColor="#FF0E00"
+                style="@style/Widget.MaterialComponents.Chip.Filter"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/light_blue_chip"
+                android:layout_width="58dp"
+                android:layout_height="50dp"
+                app:chipBackgroundColor="#007AFF"
+                style="@style/Widget.MaterialComponents.Chip.Filter"/>
+
+        </com.google.android.material.chip.ChipGroup>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
