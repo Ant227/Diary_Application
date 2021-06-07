@@ -27,7 +27,10 @@ class ProjectViewHolder(private val binding: ProjectItemBinding) : RecyclerView.
     binding.root) {
     fun bind(item: Project){
         binding.project = item
-        binding.projectCircleView.circleColor = item.color
+        item.color?.let {
+            binding.projectCircleView.circleColor = item.color
+        }
+
         binding.executePendingBindings()
     }
 

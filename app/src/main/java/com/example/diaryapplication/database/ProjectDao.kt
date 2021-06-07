@@ -22,5 +22,11 @@ interface ProjectDao{
     @Query("SELECT * FROM project_table WHERE area = :area")
     fun getProjectsByArea(area : String): LiveData<List<Project>>
 
+    @Query("SELECT * FROM project_table WHERE status = :status")
+    fun getProjectsByStatus(status : String): LiveData<List<Project>>
+
+    @Query("SELECT * FROM project_table WHERE area = :area AND status = :status")
+    fun getFilterProjects(area: String,status : String): LiveData<List<Project>>
+
 
 }

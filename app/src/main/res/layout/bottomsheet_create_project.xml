@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+
+        <EditText
+            android:id="@+id/bottomsheet_project_name_edit_text"
+            style="@style/TextAppearance.AppCompat.Body2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:autofillHints=""
+            android:hint="@string/project_name"
+            android:inputType="text"
+            android:padding="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <HorizontalScrollView
+            android:id="@+id/bottomsheet_horizontal_scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bottomsheet_project_name_edit_text">
+
+            <RadioGroup
+                android:id="@+id/bottomsheet_area_radioGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/bottomsheet_area_header"
+                    style="@style/TextAppearance.AppCompat.SearchResult.Subtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="@string/area" />
+
+                <RadioButton
+                    android:id="@+id/bottomsheet_life_radioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/life" />
+
+                <RadioButton
+                    android:id="@+id/bottomsheet_worth_radioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/worth" />
+
+                <RadioButton
+                    android:id="@+id/bottomsheet_money_radioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/money" />
+
+                <RadioButton
+                    android:id="@+id/bottomsheet_health_radioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/health" />
+
+                <RadioButton
+                    android:id="@+id/bottomsheet_hangout_radio_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hangout"
+                    android:layout_marginEnd="16dp" />
+
+
+            </RadioGroup>
+        </HorizontalScrollView>
+
+
+        <RadioGroup
+            android:id="@+id/bottomsheet_status_radio_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/bottomsheet_createbtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bottomsheet_horizontal_scrollView">
+
+            <TextView
+                android:id="@+id/bottomsheet_status_header"
+                style="@style/TextAppearance.AppCompat.SearchResult.Subtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="@string/status" />
+
+            <RadioButton
+                android:id="@+id/bottomsheet_ongoing_radioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/ongoing" />
+
+            <RadioButton
+                android:id="@+id/bottomsheet_done_radioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/done" />
+
+            <RadioButton
+                android:id="@+id/bottomsheet_hold_radioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/hold" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/bottomsheet_createbtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/create"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

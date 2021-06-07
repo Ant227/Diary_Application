@@ -18,19 +18,26 @@ class ProjectListViewModel(application: Application) : AndroidViewModel(applicat
     get() = projectDatabase.projectDao.getAllProjects()
 
 
-    private val _editProjectEvent = MutableLiveData<Event<Unit>>()
-    val editProjectEvent: LiveData<Event<Unit>>
-        get()  = _editProjectEvent
+    private val _createProjectEvent = MutableLiveData<Event<Unit>>()
+    val createProjectEvent: LiveData<Event<Unit>>
+        get()  = _createProjectEvent
 
 
     fun getProjectsByArea(area : String) : LiveData<List<Project>>{
         val projects = projectDatabase.projectDao.getProjectsByArea(area)
         return projects
     }
+    fun getProjectsByStatus(status : String) : LiveData<List<Project>>{
+        val projects = projectDatabase.projectDao.getProjectsByStatus(status)
+        return projects
+    }
 
+    fun getFilterProjects(area:String,status:String) :LiveData<List<Project>>{
+        val projects = projectDatabase.projectDao.getFilterProjects(area,status)
+        return projects
+    }
 
-
-    fun editProjectEvent(){
-        _editProjectEvent.value = Event(Unit)
+    fun createProjectEvent(){
+        _createProjectEvent.value = Event(Unit)
     }
 }

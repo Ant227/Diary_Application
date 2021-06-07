@@ -13,7 +13,7 @@ data class Project(
     @ColumnInfo(name = "name") val name: String,
     @ColumnInfo(name = "area")val  area: String,
     @ColumnInfo(name = "status")val  status: String,
-    @ColumnInfo(name = "color")val  color: Int,
+    @ColumnInfo(name = "color")val  color: Int?,
     @ColumnInfo(name = "tag")val  tag: String,
     @ColumnInfo(name = "startDate")val  startDate: Date?,
     @ColumnInfo(name = "endDate")val  endDate: Date?,

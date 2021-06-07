@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_margin="8dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -14,9 +15,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            >
-
+            app:layout_constraintEnd_toEndOf="parent">
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/life_chipButton"
@@ -51,6 +50,30 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/hangout"
+                android:layout_marginEnd="16dp"
+                style="@style/Widget.MaterialComponents.Chip.Filter"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/ongoing_chip_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ongoing"
+                android:layout_marginEnd="16dp"
+                style="@style/Widget.MaterialComponents.Chip.Filter"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/done_chip_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/done"
+                android:layout_marginEnd="16dp"
+                style="@style/Widget.MaterialComponents.Chip.Filter"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/hold_chip_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hold"
                 android:layout_marginEnd="16dp"
                 style="@style/Widget.MaterialComponents.Chip.Filter"/>
         </com.google.android.material.chip.ChipGroup>
