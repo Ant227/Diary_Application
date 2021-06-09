@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.diaryapplication.databinding.ProjectItemBinding
 import com.example.diaryapplication.model.Project
 
-class ProjectListAdapter : ListAdapter<Project, ProjectViewHolder>(ProjectDiffCallback())
+class ProjectListAdapter(private val clickListener:ProjectListener) : ListAdapter<Project, ProjectViewHolder>(ProjectDiffCallback())
 {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProjectViewHolder {
        return ProjectViewHolder.from(parent)
@@ -17,7 +17,9 @@ class ProjectListAdapter : ListAdapter<Project, ProjectViewHolder>(ProjectDiffCa
     override fun onBindViewHolder(holder: ProjectViewHolder, position: Int) {
         val projectItem = getItem(position) as Project
 
-        //TODO ("add click listener here ")
+        holder.itemView.setOnClickListener {
+            clickListener.onClick(projectItem)
+        }
         holder.bind(projectItem)
     }
 
@@ -54,4 +56,10 @@ class ProjectDiffCallback : DiffUtil.ItemCallback<Project>() {
     override fun areContentsTheSame(oldItem: Project, newItem: Project): Boolean {
         return oldItem == newItem
     }
+}
+
+interface ProjectListener {
+
+    fun onClick(project: Project)
+
 }

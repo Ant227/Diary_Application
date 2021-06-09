@@ -8,14 +8,35 @@
             <LayoutPositions>
               <option name="myPositions">
                 <map>
+                  <entry key="TabDetailsFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="-1591" />
+                            <option name="y" value="-368" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
                   <entry key="editProjectFragment">
                     <value>
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="131" />
-                            <option name="y" value="-113" />
+                            <option name="x" value="-467" />
+                            <option name="y" value="-174" />
                           </Point>
+                        </option>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="action_editProjectFragment_to_projectDetailsFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
                         </option>
                       </LayoutPositions>
                     </value>
@@ -25,8 +46,8 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="-313" />
-                            <option name="y" value="-115" />
+                            <option name="x" value="-1174" />
+                            <option name="y" value="-180" />
                           </Point>
                         </option>
                         <option name="myPositions">
@@ -41,18 +62,51 @@
                       </LayoutPositions>
                     </value>
                   </entry>
+                  <entry key="projectDetailsFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="-728" />
+                            <option name="y" value="-166" />
+                          </Point>
+                        </option>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="action_projectDetailsFragment_to_editProjectFragment2">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="projectEntryDetailsTabFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="-1380" />
+                            <option name="y" value="-370" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
                   <entry key="projectListFragment">
                     <value>
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="-96" />
-                            <option name="y" value="-112" />
+                            <option name="x" value="-954" />
+                            <option name="y" value="-179" />
                           </Point>
                         </option>
                         <option name="myPositions">
                           <map>
-                            <entry key="action_projectListFragment_to_editProjectFragment">
+                            <entry key="action_projectListFragment_to_projectDetailsFragment2">
                               <value>
                                 <LayoutPositions />
                               </value>

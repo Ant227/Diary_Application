@@ -78,6 +78,17 @@
                 style="@style/Widget.MaterialComponents.Chip.Filter"/>
         </com.google.android.material.chip.ChipGroup>
 
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/project_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/projectlist_area_chipgroup"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="3"/>
+
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/addProjectFab"
             android:layout_width="wrap_content"
@@ -90,15 +101,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/project_recycler_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/projectlist_area_chipgroup"
-            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-            app:spanCount="3"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
