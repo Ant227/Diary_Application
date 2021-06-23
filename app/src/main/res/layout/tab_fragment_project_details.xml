@@ -54,7 +54,7 @@
             app:layout_constraintTop_toBottomOf="@id/projectDetailsRelativeLayout" />
 
         <TextView
-            android:id="@+id/projectDetailsName"
+            android:id="@+id/entryDetailsProjectName"
             style="@style/TextAppearance.MaterialComponents.Headline6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -72,11 +72,11 @@
             android:layout_marginTop="16dp"
             android:padding="8dp"
             android:text="@string/start_date"
-            app:layout_constraintStart_toStartOf="@+id/projectDetailsStartDate"
+            app:layout_constraintStart_toStartOf="@+id/entryDetailsDuration"
             app:layout_constraintTop_toBottomOf="@+id/project_circleView" />
 
         <TextView
-            android:id="@+id/projectDetailsStartDate"
+            android:id="@+id/entryDetailsDuration"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -106,19 +106,19 @@
             app:dateFormat="@{project.endDate}"
             tools:text="@string/sample_date"
             style="@style/TextAppearance.MaterialComponents.Body1"
-            app:layout_constraintBottom_toBottomOf="@+id/projectDetailsStartDate"
+            app:layout_constraintBottom_toBottomOf="@+id/entryDetailsDuration"
             app:layout_constraintStart_toStartOf="@+id/projectDetailsEndDateTitle" />
 
 
         <TextView
-            android:id="@+id/projectDetailsAreaTitle"
+            android:id="@+id/entryDetailsMarkerTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:padding="8dp"
             android:text="@string/area"
             app:layout_constraintStart_toStartOf="@+id/projectDetailsArea"
-            app:layout_constraintTop_toBottomOf="@+id/projectDetailsStartDate" />
+            app:layout_constraintTop_toBottomOf="@+id/entryDetailsDuration" />
 
         <TextView
             android:id="@+id/projectDetailsArea"
@@ -130,7 +130,7 @@
             tools:text="@string/money"
             style="@style/TextAppearance.MaterialComponents.Body1"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/projectDetailsAreaTitle" />
+            app:layout_constraintTop_toBottomOf="@+id/entryDetailsMarkerTitle" />
 
         <TextView
             android:id="@+id/projectDetailsTagTitle"

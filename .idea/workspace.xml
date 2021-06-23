@@ -6,34 +6,40 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="I/Project" />
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="I/E" />
     <option name="TOOL_WINDOW_LOG_LEVEL" value="info" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5b700e38-b422-4bf3-8b40-f3cb7c10b95e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/diaryapplication/projectDetails/ProjectDetailsFragment.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/diaryapplication/projectDetails/ViewPager2Adapter.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/diaryapplication/projectDetails/tabFragments/ProjectDetailsTabFragment.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/diaryapplication/projectDetails/tabFragments/ProjectDetailsTabViewModel.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/diaryapplication/projectDetails/tabFragments/ProjectEntryDetailsTabFragment.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_baseline_calendar_today_24.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_baseline_edit_24.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_project_details.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/tab_fragment_project_details.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/tab_fragment_project_entries.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/diaryapplication/database/EntryDao.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/diaryapplication/editentry/EditEntryFragment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/diaryapplication/editentry/EditEntryViewModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/diaryapplication/entrydetails/EntryDetailsFragment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/diaryapplication/entrydetails/EntryDetailsViewModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/diaryapplication/mainscreen/EntryListAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/diaryapplication/mainscreen/entrybottomsheet/AddEntryBottomSheetFragment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/diaryapplication/mainscreen/entrybottomsheet/AddEntryBottomSheetViewModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/diaryapplication/model/Entry.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_baseline_fiber_new_24.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_baseline_flag_24.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_baseline_open_in_new_24.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_baseline_star_24.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/entry_item_main.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_add_entry_bottom_sheet.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_edit_entry.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_entry_details.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/navEditor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/navEditor.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/diaryapplication/ProjectsList/ProjectListAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/diaryapplication/ProjectsList/ProjectListAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/diaryapplication/database/ProjectDao.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/diaryapplication/database/ProjectDao.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/diaryapplication/editproject/EditProjectFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/diaryapplication/editproject/EditProjectFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/diaryapplication/editproject/EditProjectViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/diaryapplication/editproject/EditProjectViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/diaryapplication/model/Project.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/diaryapplication/model/Project.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_edit_project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_edit_project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_project_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_project_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/diaryapplication/ProjectsList/ProjectListViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/diaryapplication/ProjectsList/ProjectListViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/diaryapplication/database/ProjectDatabase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/diaryapplication/database/ProjectDatabase.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/diaryapplication/mainscreen/MainScreenFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/diaryapplication/mainscreen/MainScreenFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/diaryapplication/mainscreen/MainScreenViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/diaryapplication/mainscreen/MainScreenViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_main_screen.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_main_screen.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/tab_fragment_project_details.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/tab_fragment_project_details.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/navigation/nav_graph.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/navigation/nav_graph.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
@@ -42,7 +48,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[12adeef7]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[Nexus_5X_API_28]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -89,11 +95,12 @@
     <property name="settings.editor.selected.configurable" value="emulator" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/src/main/res/layout" />
-      <recent name="$PROJECT_DIR$/app/src/main/java/com/example/diaryapplication" />
+    <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="com.example.diaryapplication.projectDetails.tabFragments" />
+      <recent name="com.example.diaryapplication.database" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.example.diaryapplication" />
       <recent name="com.example.diaryapplication.ProjectsList" />
       <recent name="com.example.diaryapplication.projectList" />
     </key>
@@ -105,9 +112,9 @@
     <key name="KotlinExtractInterfaceDialog.RECENT_KEYS">
       <recent name="com.example.diaryapplication.ProjectsList" />
     </key>
-    <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
-      <recent name="com.example.diaryapplication.projectDetails.tabFragments" />
-      <recent name="com.example.diaryapplication.database" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/res/layout" />
+      <recent name="$PROJECT_DIR$/app/src/main/java/com/example/diaryapplication" />
     </key>
   </component>
   <component name="RunManager">
@@ -201,27 +208,35 @@
       <option name="project" value="LOCAL" />
       <updated>1623059398560</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="9 - Jun - 2021&#10;&#10;done &#10;-date insertion to room&#10;-click listener for project in ProjectListFragment&#10;-BottomSheetDialog in ProjectListFragment&#10;-Project can be edited &#10;-date can be picked from date picker in EditProjectFragment.kt&#10;-ProjectDetailFragment with two Tab View PagerII &#10;&#10;still working on Error&#10; - observing projects in ProjectListFragment.kt over Filter when click backward from ProjectDetailsFragment.kt">
+      <created>1623234281189</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1623234281189</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Chip Filter Area&#10;&#10;Working on - ProjectListFragment.kt&#10;&#10;-implementing multiple chips filter&#10;&#10;difficulty level for me  - 8&#10;&#10;what do I learn&#10;- handling multiple selection on chips&#10;&#10;need to change&#10;- need to move some codes to ProjectListViewModel.kt" />
     <MESSAGE value="just saving" />
-    <option name="LAST_COMMIT_MESSAGE" value="just saving" />
+    <MESSAGE value="9 - Jun - 2021&#10;&#10;done &#10;-date insertion to room&#10;-click listener for project in ProjectListFragment&#10;-BottomSheetDialog in ProjectListFragment&#10;-Project can be edited &#10;-date can be picked from date picker in EditProjectFragment.kt&#10;-ProjectDetailFragment with two Tab View PagerII &#10;&#10;still working on Error&#10; - observing projects in ProjectListFragment.kt over Filter when click backward from ProjectDetailsFragment.kt" />
+    <option name="LAST_COMMIT_MESSAGE" value="9 - Jun - 2021&#10;&#10;done &#10;-date insertion to room&#10;-click listener for project in ProjectListFragment&#10;-BottomSheetDialog in ProjectListFragment&#10;-Project can be edited &#10;-date can be picked from date picker in EditProjectFragment.kt&#10;-ProjectDetailFragment with two Tab View PagerII &#10;&#10;still working on Error&#10; - observing projects in ProjectListFragment.kt over Filter when click backward from ProjectDetailsFragment.kt" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2179" y="153" key="#com.intellij.ide.util.MemberChooser" timestamp="1623213196096">
+    <state x="2179" y="153" key="#com.intellij.ide.util.MemberChooser" timestamp="1623830693685">
       <screen x="1440" y="-110" width="1920" height="1080" />
     </state>
-    <state x="2179" y="153" key="#com.intellij.ide.util.MemberChooser/1440.-110.1920.1080/0.0.1440.900@1440.-110.1920.1080" timestamp="1623213196096" />
+    <state x="2179" y="153" key="#com.intellij.ide.util.MemberChooser/1440.-110.1920.1080/0.0.1440.900@1440.-110.1920.1080" timestamp="1623830693685" />
     <state x="1639" y="351" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1623058838019">
       <screen x="1440" y="-110" width="1920" height="1080" />
     </state>
     <state x="1639" y="351" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/1440.-110.1920.1080/0.0.1440.900@1440.-110.1920.1080" timestamp="1623058838019" />
-    <state x="2138" y="318" width="944" height="223" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1623058842787">
+    <state x="2138" y="318" width="944" height="223" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1624341394234">
       <screen x="1440" y="-110" width="1920" height="1080" />
     </state>
-    <state x="2138" y="318" width="944" height="223" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/1440.-110.1920.1080/0.0.1440.900@1440.-110.1920.1080" timestamp="1623058842787" />
+    <state x="2138" y="318" width="944" height="223" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/1440.-110.1920.1080/0.0.1440.900@1440.-110.1920.1080" timestamp="1624341394234" />
     <state x="2138" y="184" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1622614540183">
       <screen x="1440" y="-110" width="1920" height="1080" />
     </state>
@@ -238,14 +253,14 @@
       <screen x="1440" y="-110" width="1920" height="1080" />
     </state>
     <state x="1988" y="192" key="AndroidCreateResourceFileDialog/1440.-110.1920.1080/0.0.1440.900@1440.-110.1920.1080" timestamp="1623043872912" />
-    <state x="2222" y="214" key="AndroidCreateXmlResourceDialog" timestamp="1623217397743">
+    <state x="2222" y="214" key="AndroidCreateXmlResourceDialog" timestamp="1624006579132">
       <screen x="1440" y="-110" width="1920" height="1080" />
     </state>
-    <state x="2222" y="214" key="AndroidCreateXmlResourceDialog/1440.-110.1920.1080/0.0.1440.900@1440.-110.1920.1080" timestamp="1623217397743" />
-    <state x="1810" y="-110" key="CommitChangelistDialog2" timestamp="1623059398242">
+    <state x="2222" y="214" key="AndroidCreateXmlResourceDialog/1440.-110.1920.1080/0.0.1440.900@1440.-110.1920.1080" timestamp="1624006579132" />
+    <state x="1810" y="-110" key="CommitChangelistDialog2" timestamp="1623234280880">
       <screen x="1440" y="-110" width="1920" height="1080" />
     </state>
-    <state x="1810" y="-110" key="CommitChangelistDialog2/1440.-110.1920.1080/0.0.1440.900@1440.-110.1920.1080" timestamp="1623059398242" />
+    <state x="1810" y="-110" key="CommitChangelistDialog2/1440.-110.1920.1080/0.0.1440.900@1440.-110.1920.1080" timestamp="1623234280880" />
     <state x="2241" y="334" key="Github.ShareDialog" timestamp="1622613973361">
       <screen x="1440" y="-110" width="1920" height="1080" />
     </state>
@@ -254,49 +269,71 @@
       <screen x="1440" y="-110" width="1920" height="1080" />
     </state>
     <state x="1948" y="136" key="Github.UntrackedFilesDialog/1440.-110.1920.1080/0.0.1440.900@1440.-110.1920.1080" timestamp="1622613979532" />
-    <state width="1876" height="263" key="GridCell.Tab.0.bottom" timestamp="1623232382537">
+    <state width="1876" height="305" key="GridCell.Tab.0.bottom" timestamp="1624440072061">
       <screen x="1440" y="-110" width="1920" height="1080" />
     </state>
-    <state width="1876" height="263" key="GridCell.Tab.0.bottom/1440.-110.1920.1080/0.0.1440.900@1440.-110.1920.1080" timestamp="1623232382537" />
-    <state width="1876" height="263" key="GridCell.Tab.0.center" timestamp="1623232382535">
+    <state width="1876" height="305" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1623918233533" />
+    <state width="1876" height="305" key="GridCell.Tab.0.bottom/1440.-110.1920.1080/0.0.1440.900@1440.-110.1920.1080" timestamp="1624440072061" />
+    <state width="1876" height="305" key="GridCell.Tab.0.bottom/1440.-110.1920.1080/0.23.1440.877@1440.-110.1920.1080" timestamp="1623857640307" />
+    <state width="1876" height="305" key="GridCell.Tab.0.center" timestamp="1624440072058">
       <screen x="1440" y="-110" width="1920" height="1080" />
     </state>
-    <state width="1876" height="263" key="GridCell.Tab.0.center/1440.-110.1920.1080/0.0.1440.900@1440.-110.1920.1080" timestamp="1623232382535" />
-    <state width="1876" height="263" key="GridCell.Tab.0.left" timestamp="1623232382533">
+    <state width="1876" height="305" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1623918233532" />
+    <state width="1876" height="305" key="GridCell.Tab.0.center/1440.-110.1920.1080/0.0.1440.900@1440.-110.1920.1080" timestamp="1624440072058" />
+    <state width="1876" height="305" key="GridCell.Tab.0.center/1440.-110.1920.1080/0.23.1440.877@1440.-110.1920.1080" timestamp="1623857640305" />
+    <state width="1876" height="305" key="GridCell.Tab.0.left" timestamp="1624440072057">
       <screen x="1440" y="-110" width="1920" height="1080" />
     </state>
-    <state width="1876" height="263" key="GridCell.Tab.0.left/1440.-110.1920.1080/0.0.1440.900@1440.-110.1920.1080" timestamp="1623232382533" />
-    <state width="1876" height="263" key="GridCell.Tab.0.right" timestamp="1623232382536">
+    <state width="1876" height="305" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1623918233532" />
+    <state width="1876" height="305" key="GridCell.Tab.0.left/1440.-110.1920.1080/0.0.1440.900@1440.-110.1920.1080" timestamp="1624440072057" />
+    <state width="1876" height="305" key="GridCell.Tab.0.left/1440.-110.1920.1080/0.23.1440.877@1440.-110.1920.1080" timestamp="1623857640303" />
+    <state width="1876" height="305" key="GridCell.Tab.0.right" timestamp="1624440072060">
       <screen x="1440" y="-110" width="1920" height="1080" />
     </state>
-    <state width="1876" height="263" key="GridCell.Tab.0.right/1440.-110.1920.1080/0.0.1440.900@1440.-110.1920.1080" timestamp="1623232382536" />
+    <state width="1876" height="305" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1623918233533" />
+    <state width="1876" height="305" key="GridCell.Tab.0.right/1440.-110.1920.1080/0.0.1440.900@1440.-110.1920.1080" timestamp="1624440072060" />
+    <state width="1876" height="305" key="GridCell.Tab.0.right/1440.-110.1920.1080/0.23.1440.877@1440.-110.1920.1080" timestamp="1623857640306" />
     <state x="1988" y="180" key="IDE.errors.dialog" timestamp="1622881406867">
       <screen x="1440" y="-110" width="1920" height="1080" />
     </state>
     <state x="1988" y="180" key="IDE.errors.dialog/1440.-110.1920.1080/0.0.1440.900@1440.-110.1920.1080" timestamp="1622881406867" />
-    <state x="1939" y="139" key="RollbackChangesDialog" timestamp="1623059141401">
+    <state x="1939" y="139" key="RollbackChangesDialog" timestamp="1623304238416">
       <screen x="1440" y="-110" width="1920" height="1080" />
     </state>
-    <state x="1939" y="139" key="RollbackChangesDialog/1440.-110.1920.1080/0.0.1440.900@1440.-110.1920.1080" timestamp="1623059141401" />
+    <state x="1939" y="139" key="RollbackChangesDialog/1440.-110.1920.1080/0.0.1440.900@1440.-110.1920.1080" timestamp="1623304238416" />
     <state x="1901" y="69" key="SettingsEditor" timestamp="1622606401187">
       <screen x="1440" y="-110" width="1920" height="1080" />
     </state>
     <state x="1901" y="69" key="SettingsEditor/1440.-110.1920.1080/0.0.1440.900@1440.-110.1920.1080" timestamp="1622606401187" />
-    <state x="2000" y="170" key="Vcs.Push.Dialog.v2" timestamp="1623059404700">
+    <state x="2000" y="170" key="Vcs.Push.Dialog.v2" timestamp="1623234286034">
       <screen x="1440" y="-110" width="1920" height="1080" />
     </state>
-    <state x="2000" y="170" key="Vcs.Push.Dialog.v2/1440.-110.1920.1080/0.0.1440.900@1440.-110.1920.1080" timestamp="1623059404700" />
-    <state x="2183" y="351" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1622879360229">
+    <state x="2000" y="170" key="Vcs.Push.Dialog.v2/1440.-110.1920.1080/0.0.1440.900@1440.-110.1920.1080" timestamp="1623234286034" />
+    <state x="2183" y="351" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1623304257157">
       <screen x="1440" y="-110" width="1920" height="1080" />
     </state>
-    <state x="2183" y="351" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1440.-110.1920.1080/0.0.1440.900@1440.-110.1920.1080" timestamp="1622879360229" />
+    <state x="2183" y="351" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1440.-110.1920.1080/0.0.1440.900@1440.-110.1920.1080" timestamp="1623304257157" />
     <state x="2125" y="235" key="refactoring.ChangeSignatureDialog" timestamp="1623231827683">
       <screen x="1440" y="-110" width="1920" height="1080" />
     </state>
     <state x="2125" y="235" key="refactoring.ChangeSignatureDialog/1440.-110.1920.1080/0.0.1440.900@1440.-110.1920.1080" timestamp="1623231827683" />
-    <state x="2065" y="131" width="670" height="676" key="search.everywhere.popup" timestamp="1623214587836">
+    <state x="2065" y="131" width="670" height="676" key="search.everywhere.popup" timestamp="1623335318681">
       <screen x="1440" y="-110" width="1920" height="1080" />
     </state>
-    <state x="2065" y="131" width="670" height="676" key="search.everywhere.popup/1440.-110.1920.1080/0.0.1440.900@1440.-110.1920.1080" timestamp="1623214587836" />
+    <state x="2065" y="131" width="670" height="676" key="search.everywhere.popup/1440.-110.1920.1080/0.0.1440.900@1440.-110.1920.1080" timestamp="1623335318681" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-function">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/diaryapplication/editentry/EditEntryFragment.kt</url>
+          <line>133</line>
+          <properties class="com.example.diaryapplication.editentry.EditEntryFragment" method="calculateTimeDiff">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="entry"
+            type="com.example.diaryapplication.model.Entry" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".editentry.EditEntryFragment">
+
+
+        <EditText
+            android:id="@+id/editEntryName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:ems="10"
+            android:text="@{entry.name}"
+            android:inputType="textPersonName"
+            android:hint="@string/entry_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editEntryName">
+
+
+            <com.mikhaellopez.circleview.CircleView
+                android:id="@+id/project_circleView"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="16dp"
+                app:cv_color="@android:color/holo_green_light"
+                app:cv_shadow="true"
+                app:cv_shadow_color="@android:color/holo_green_light"
+                app:cv_shadow_radius="10"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/entryDetailsProjectName"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/project_circleView"
+                app:layout_constraintStart_toEndOf="@+id/project_circleView"
+                app:layout_constraintTop_toTopOf="@+id/project_circleView"
+                tools:text="@string/project_name" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="40dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/ic_baseline_open_in_new_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+        <TextView
+            android:id="@+id/editEntryFromTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/from"
+            android:layout_marginStart="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/editEntryFrom"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/editEntryFrom"
+            style="@style/TextAppearance.MaterialComponents.Headline6"
+            android:padding="8dp"/>
+
+
+        <TextView
+            android:id="@+id/editEntryFrom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            tools:text="@string/sample_time_example"
+            app:timeFormat="@{entry.startTime}"
+            app:layout_constraintStart_toEndOf="@+id/editEntryFromTitle"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
+            style="@style/TextAppearance.MaterialComponents.Body1"
+            android:padding="8dp"/>
+
+
+        <TextView
+            android:id="@+id/editEntryToTitle"
+            style="@style/TextAppearance.MaterialComponents.Headline6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="@string/to"
+            app:layout_constraintBottom_toBottomOf="@+id/editEntryTo"
+            app:layout_constraintEnd_toStartOf="@+id/editEntryTo"
+            app:layout_constraintTop_toTopOf="@+id/editEntryTo" />
+
+        <TextView
+            android:id="@+id/editEntryTo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            tools:text="@string/sample_time_example"
+            app:timeFormat="@{entry.endTime}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/editEntryFrom"
+            style="@style/TextAppearance.MaterialComponents.Body1"
+            android:padding="8dp"/>
+
+        <TextView
+            android:id="@+id/editEntryDateTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/date"
+            android:layout_marginStart="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/editEntryDate"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/editEntryDate"
+            style="@style/TextAppearance.MaterialComponents.Headline6"
+            android:padding="8dp"/>
+
+
+        <TextView
+            android:id="@+id/editEntryDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            tools:text="@string/sample_date"
+            app:dateFormat="@{entry.startDate}"
+            app:layout_constraintStart_toEndOf="@+id/editEntryDateTitle"
+            app:layout_constraintTop_toBottomOf="@+id/editEntryFrom"
+            style="@style/TextAppearance.MaterialComponents.Body1"
+            android:padding="8dp"/>
+
+
+        <TextView
+            android:id="@+id/editEntryTimeTitle"
+            style="@style/TextAppearance.MaterialComponents.Headline6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="@string/time"
+            app:layout_constraintBottom_toBottomOf="@+id/editEntryTime"
+            app:layout_constraintStart_toStartOf="@+id/editEntryToTitle"
+            app:layout_constraintTop_toTopOf="@+id/editEntryTime" />
+
+        <TextView
+            android:id="@+id/editEntryTime"
+            style="@style/TextAppearance.MaterialComponents.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            app:layout_constraintStart_toEndOf="@+id/editEntryTimeTitle"
+            app:layout_constraintTop_toTopOf="@+id/editEntryDate"
+            tools:text="@string/sample_time"/>
+
+        <TextView
+            android:id="@+id/editEntryMarkerTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/marker"
+            app:layout_constraintStart_toStartOf="@+id/editEntryDateTitle"
+            app:layout_constraintTop_toBottomOf="@+id/editEntryDateTitle"
+            android:padding="8dp"
+            />
+
+        <CheckBox
+            android:id="@+id/editEntryCheckBoxStar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableRight="@drawable/ic_baseline_star_24"
+            app:layout_constraintStart_toStartOf="@+id/editEntryMarkerTitle"
+            app:layout_constraintTop_toBottomOf="@+id/editEntryMarkerTitle"
+            />
+
+        <CheckBox
+            android:id="@+id/editEntryCheckBoxNew"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:drawableRight="@drawable/ic_baseline_fiber_new_24"
+            app:layout_constraintStart_toEndOf="@+id/editEntryCheckBoxStar"
+            app:layout_constraintTop_toTopOf="@+id/editEntryCheckBoxStar"
+            />
+
+        <CheckBox
+            android:id="@+id/editEntryCheckBoxFlag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:drawableRight="@drawable/ic_baseline_flag_24"
+            android:padding="8dp"
+            app:layout_constraintStart_toEndOf="@+id/editEntryCheckBoxNew"
+            app:layout_constraintTop_toTopOf="@+id/editEntryCheckBoxNew" />
+
+        <TextView
+            android:id="@+id/editEntryCommentTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/comment"
+            app:layout_constraintStart_toStartOf="@+id/editEntryCheckBoxStar"
+            app:layout_constraintTop_toBottomOf="@+id/editEntryCheckBoxStar" />
+
+        <EditText
+            android:id="@+id/editEntryComment"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:ems="10"
+            android:gravity="start|top"
+            android:inputType="textMultiLine"
+            android:text="@{entry.note}"
+            app:layout_constraintBottom_toTopOf="@+id/editEntrySaveButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/editEntryCommentTitle"
+            app:layout_constraintTop_toBottomOf="@+id/editEntryCommentTitle" />
+
+        <Button
+            android:id="@+id/editEntrySaveButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/save"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

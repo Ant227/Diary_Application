@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="entry"
+            type="com.example.diaryapplication.model.Entry" />
+
+        <variable
+            name="project"
+            type="com.example.diaryapplication.model.Project" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/entryDetailsProjectTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:padding="8dp"
+            android:layout_marginStart="16dp"
+            android:text="@string/project_name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/entryDetailsProjectName"
+            style="@style/TextAppearance.MaterialComponents.Headline6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="@{project.name}"
+            tools:text="@string/project_name"
+            app:layout_constraintStart_toStartOf="@id/entryDetailsProjectTitle"
+            app:layout_constraintTop_toBottomOf="@id/entryDetailsProjectTitle" />
+
+        <TextView
+            android:id="@+id/entryDetailsEntryTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:padding="8dp"
+            android:text="@string/entry_name"
+            app:layout_constraintStart_toStartOf="@id/entryDetailsProjectName"
+            app:layout_constraintTop_toBottomOf="@id/entryDetailsProjectName"  />
+        <TextView
+            android:id="@+id/entryDetailsEntryName"
+            style="@style/TextAppearance.MaterialComponents.Headline6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="@{entry.name}"
+            tools:text="@string/entry_name"
+            app:layout_constraintStart_toStartOf="@id/entryDetailsProjectName"
+            app:layout_constraintTop_toBottomOf="@id/entryDetailsEntryTitle" />
+
+        <TextView
+            android:id="@+id/entryDetailsDurationTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:padding="8dp"
+            android:text="@string/duration"
+            app:layout_constraintStart_toStartOf="@id/entryDetailsProjectName"
+            app:layout_constraintTop_toBottomOf="@+id/entryDetailsEntryName" />
+
+        <TextView
+            android:id="@+id/entryDetailsDuration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            tools:text="@string/sample_duration"
+            app:startTime="@{entry.startTime}"
+            app:endTime="@{entry.endTime}"
+            style="@style/TextAppearance.MaterialComponents.Body1"
+            app:layout_constraintStart_toStartOf="@id/entryDetailsProjectName"
+            app:layout_constraintTop_toBottomOf="@+id/entryDetailsDurationTitle" />
+
+        <TextView
+            android:id="@+id/entryDetailsTimeTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="40dp"
+            android:padding="8dp"
+            android:text="@string/time"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/entryDetailsDurationTitle" />
+
+        <TextView
+            android:id="@+id/entryDetailsTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            tools:text="@string/sample_time"
+            app:timeInterval="@{entry.timeDiff}"
+            style="@style/TextAppearance.MaterialComponents.Body1"
+            app:layout_constraintBottom_toBottomOf="@+id/entryDetailsDuration"
+            app:layout_constraintStart_toStartOf="@+id/entryDetailsTimeTitle" />
+
+
+        <TextView
+            android:id="@+id/entryDetailsMarkerTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:padding="8dp"
+            android:text="@string/marker"
+            app:layout_constraintStart_toStartOf="@+id/entryDetailsProjectName"
+            app:layout_constraintTop_toBottomOf="@+id/entryDetailsDuration" />
+
+        <ImageView
+            android:id="@+id/entryDetailsMarker1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:src="@drawable/ic_baseline_star_24"
+            tools:text="@string/money"
+            style="@style/TextAppearance.MaterialComponents.Body1"
+            app:layout_constraintStart_toStartOf="@+id/entryDetailsProjectName"
+            app:layout_constraintTop_toBottomOf="@+id/entryDetailsMarkerTitle" />
+
+        <TextView
+            android:id="@+id/entryDetailsNoteTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:padding="8dp"
+            android:text="@string/note"
+            app:layout_constraintStart_toStartOf="@+id/entryDetailsProjectName"
+            app:layout_constraintTop_toBottomOf="@+id/entryDetailsMarker1" />
+
+        <TextView
+            android:id="@+id/entryDetailsNote"
+            style="@style/TextAppearance.MaterialComponents.Body1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:padding="8dp"
+            android:text="@{entry.note}"
+            android:scrollbars="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/entryDetailsProjectName"
+            app:layout_constraintTop_toBottomOf="@+id/entryDetailsNoteTitle" />
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/entryDetailsFab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:clickable="true"
+            android:contentDescription="@string/add_project"
+            android:src="@android:drawable/ic_menu_edit"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:focusable="true" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

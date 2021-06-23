@@ -12,14 +12,21 @@
         <action
             android:id="@+id/action_mainScreenFragment_to_projectListFragment"
             app:destination="@id/projectListFragment" />
+        <action
+            android:id="@+id/action_mainScreenFragment_to_entryDetails2"
+            app:destination="@id/entryDetailsFragment" />
     </fragment>
     <fragment
         android:id="@+id/projectListFragment"
         android:name="com.example.diaryapplication.ProjectsList.ProjectListFragment"
-        android:label="ProjectListFragment" >
+        android:label="ProjectListFragment"
+        tools:layout="@layout/fragment_project_list">
         <action
             android:id="@+id/action_projectListFragment_to_projectDetailsFragment2"
-            app:destination="@id/projectDetailsFragment" />
+            app:destination="@id/projectDetailsFragment"
+            app:launchSingleTop="false"
+            app:popUpTo="@id/projectListFragment"
+            app:popUpToInclusive="false" />
     </fragment>
     <fragment
         android:id="@+id/editProjectFragment"
@@ -39,7 +46,8 @@
     <fragment
         android:id="@+id/projectDetailsFragment"
         android:name="com.example.diaryapplication.projectDetails.ProjectDetailsFragment"
-        android:label="ProjectDetailsFragment" >
+        android:label="ProjectDetailsFragment"
+        tools:layout="@layout/fragment_project_details">
         <argument
             android:name="argId"
             app:argType="integer" />
@@ -49,11 +57,24 @@
             app:popUpTo="@id/projectDetailsFragment" />
     </fragment>
     <fragment
-        android:id="@+id/TabDetailsFragment"
-        android:name="com.example.diaryapplication.projectDetails.tabFragments.ProjectDetailsTabFragment"
-        android:label="TabDetailsFragment"/>
+        android:id="@+id/entryDetailsFragment"
+        android:name="com.example.diaryapplication.entrydetails.EntryDetailsFragment"
+        android:label="EntryDetailsFragment"
+        tools:layout="@layout/fragment_entry_details">
+        <argument
+            android:name="argsEntryId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_entryDetailsFragment_to_editEntryFragment"
+            app:destination="@id/editEntryFragment" />
+    </fragment>
     <fragment
-        android:id="@+id/projectEntryDetailsTabFragment"
-        android:name="com.example.diaryapplication.projectDetails.tabFragments.ProjectEntryDetailsTabFragment"
-        android:label="ProjectEntryDetailsTabFragment" />
+        android:id="@+id/editEntryFragment"
+        android:name="com.example.diaryapplication.editentry.EditEntryFragment"
+        android:label="EditEntryFragment"
+        tools:layout="@layout/fragment_edit_entry">
+        <argument
+            android:name="argEntryId"
+            app:argType="integer" />
+    </fragment>
 </navigation>
