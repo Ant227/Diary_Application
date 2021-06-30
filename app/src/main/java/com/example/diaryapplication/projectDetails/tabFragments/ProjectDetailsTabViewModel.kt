@@ -23,7 +23,7 @@ class ProjectDetailsTabViewModel(application: Application) : AndroidViewModel(ap
     val project : LiveData<Project>
     get() = _project
 
-    fun getProject(id: Int){
+    fun getProject(id: Long){
         viewModelScope.launch {
             val project = database.projectDao.getProject(id)
             _project.value = project

@@ -16,7 +16,7 @@ interface ProjectDao{
     fun getAllProjects(): LiveData<List<Project>>
 
     @Query("SELECT * FROM project_table WHERE id = :id")
-    suspend fun getProject(id: Int): Project
+    suspend fun getProject(id: Long): Project
 
     @Query("SELECT * FROM project_table WHERE area = :area")
     fun getProjectsByArea(area : String): LiveData<List<Project>>

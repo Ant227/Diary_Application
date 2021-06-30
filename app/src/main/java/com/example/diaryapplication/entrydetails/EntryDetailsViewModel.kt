@@ -8,6 +8,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.diaryapplication.Event
 import com.example.diaryapplication.database.ProjectDatabase
 import com.example.diaryapplication.model.Entry
+import com.example.diaryapplication.model.Project
 import kotlinx.coroutines.launch
 
 class EntryDetailsViewModel(application:Application) : AndroidViewModel(application) {
@@ -18,6 +19,10 @@ class EntryDetailsViewModel(application:Application) : AndroidViewModel(applicat
     val entry: LiveData<Entry>
         get()  = _entry
 
+    private val _project = MutableLiveData<Project>()
+    val project: LiveData<Project>
+        get()  = _project
+
     private val _openEditEntryEvent = MutableLiveData<Event<Unit>>()
     val openEditEntryEvent: LiveData<Event<Unit>>
         get()  = _openEditEntryEvent
@@ -27,11 +32,18 @@ class EntryDetailsViewModel(application:Application) : AndroidViewModel(applicat
         _openEditEntryEvent.value = Event(Unit)
     }
 
-    fun getEntry(id: Int){
+    fun getEntry(id: Long){
         viewModelScope.launch {
                 _entry.value = projectDatabase.entryDao.getEntry(id)
         }
     }
+
+    fun getProject(id: Long){
+        viewModelScope.launch {
+            _project.value = projectDatabase.projectDao.getProject(id)
+        }
+    }
+
 
 
 

@@ -36,7 +36,7 @@
 
         <argument
             android:name="argProjectId"
-            app:argType="integer" />
+            app:argType="long" />
         <action
             android:id="@+id/action_editProjectFragment_to_projectDetailsFragment"
             app:destination="@id/projectDetailsFragment"
@@ -50,7 +50,7 @@
         tools:layout="@layout/fragment_project_details">
         <argument
             android:name="argId"
-            app:argType="integer" />
+            app:argType="long" />
         <action
             android:id="@+id/action_projectDetailsFragment_to_editProjectFragment2"
             app:destination="@id/editProjectFragment"
@@ -63,10 +63,12 @@
         tools:layout="@layout/fragment_entry_details">
         <argument
             android:name="argsEntryId"
-            app:argType="integer" />
+            app:argType="long" />
         <action
             android:id="@+id/action_entryDetailsFragment_to_editEntryFragment"
-            app:destination="@id/editEntryFragment" />
+            app:destination="@id/editEntryFragment"
+            app:popUpTo="@id/entryDetailsFragment"
+            app:popUpToInclusive="false" />
     </fragment>
     <fragment
         android:id="@+id/editEntryFragment"
@@ -75,6 +77,26 @@
         tools:layout="@layout/fragment_edit_entry">
         <argument
             android:name="argEntryId"
-            app:argType="integer" />
+            app:argType="long" />
+        <action
+            android:id="@+id/action_editEntryFragment_to_entrySelectProjectFragment"
+            app:destination="@id/entrySelectProjectFragment"
+            app:popUpTo="@id/editEntryFragment"
+            app:popUpToInclusive="false" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/entrySelectProjectFragment"
+        android:name="com.example.diaryapplication.entryselectproject.EntrySelectProjectFragment"
+        android:label="EntrySelectProjectFragment"
+        tools:layout="@layout/fragment_entry_select_project">
+        <action
+            android:id="@+id/action_entrySelectProjectFragment_to_editEntryFragment"
+            app:destination="@id/editEntryFragment"
+            app:popUpTo="@id/editEntryFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="argsEntryId"
+            app:argType="long" />
     </fragment>
 </navigation>

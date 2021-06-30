@@ -7,6 +7,10 @@
         <variable
             name="entry"
             type="com.example.diaryapplication.model.Entry" />
+
+        <variable
+            name="project"
+            type="com.example.diaryapplication.model.Project" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -31,19 +35,22 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout2"
+            android:id="@+id/editEntryProjectLayer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:focusable="true"
+            android:clickable="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editEntryName">
 
 
             <com.mikhaellopez.circleview.CircleView
-                android:id="@+id/project_circleView"
+                android:id="@+id/editEntryProjectColor"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="16dp"
+                app:projectColor="@{project.color}"
                 app:cv_color="@android:color/holo_green_light"
                 app:cv_shadow="true"
                 app:cv_shadow_color="@android:color/holo_green_light"
@@ -53,14 +60,15 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/entryDetailsProjectName"
+                android:id="@+id/editEntryProjectName"
                 style="@style/TextAppearance.MaterialComponents.Headline6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
-                app:layout_constraintBottom_toBottomOf="@+id/project_circleView"
-                app:layout_constraintStart_toEndOf="@+id/project_circleView"
-                app:layout_constraintTop_toTopOf="@+id/project_circleView"
+                android:text="@{project.name}"
+                app:layout_constraintBottom_toBottomOf="@+id/editEntryProjectColor"
+                app:layout_constraintStart_toEndOf="@+id/editEntryProjectColor"
+                app:layout_constraintTop_toTopOf="@+id/editEntryProjectColor"
                 tools:text="@string/project_name" />
 
             <ImageView
@@ -97,7 +105,7 @@
             tools:text="@string/sample_time_example"
             app:timeFormat="@{entry.startTime}"
             app:layout_constraintStart_toEndOf="@+id/editEntryFromTitle"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
+            app:layout_constraintTop_toBottomOf="@+id/editEntryProjectLayer"
             style="@style/TextAppearance.MaterialComponents.Body1"
             android:padding="8dp"/>
 

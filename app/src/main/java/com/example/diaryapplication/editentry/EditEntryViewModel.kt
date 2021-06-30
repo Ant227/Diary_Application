@@ -21,10 +21,14 @@ class EditEntryViewModel(application: Application) : AndroidViewModel(applicatio
     val entry: LiveData<Entry>
         get() = _entry
 
+    private val _project = MutableLiveData<Project>()
+    val project: LiveData<Project>
+        get() = _project
+
+
     private val _startTimePickerEvent = MutableLiveData<Event<Unit>>()
     val startTimePickerEvent: LiveData<Event<Unit>>
         get() = _startTimePickerEvent
-
 
 
     private val _endTimePickerEvent = MutableLiveData<Event<Unit>>()
@@ -34,6 +38,10 @@ class EditEntryViewModel(application: Application) : AndroidViewModel(applicatio
     private val _saveEntryEvent = MutableLiveData<Event<Unit>>()
     val saveEntryEvent: LiveData<Event<Unit>>
         get() = _saveEntryEvent
+
+    private val _selectProjectEvent = MutableLiveData<Event<Unit>>()
+    val selectProjectEvent: LiveData<Event<Unit>>
+        get() = _selectProjectEvent
 
     fun startTimePickerEvent() {
         _startTimePickerEvent.value = Event(Unit)
@@ -46,11 +54,22 @@ class EditEntryViewModel(application: Application) : AndroidViewModel(applicatio
         _saveEntryEvent.value = Event(Unit)
     }
 
-    fun getEntry(id: Int) {
+    fun selectProject(){
+        _selectProjectEvent.value = Event(Unit)
+    }
+
+    fun getEntry(id: Long) {
         viewModelScope.launch {
             _entry.value = projectDatabase.entryDao.getEntry(id)
         }
     }
+
+    fun getProject(id: Long) {
+        viewModelScope.launch {
+            _project.value = projectDatabase.projectDao.getProject(id)
+        }
+    }
+
 
     fun updateEntry(entry: Entry) {
         viewModelScope.launch {

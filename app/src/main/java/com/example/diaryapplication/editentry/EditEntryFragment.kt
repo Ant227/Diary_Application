@@ -13,6 +13,7 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.example.diaryapplication.EventObserver
 import com.example.diaryapplication.R
 import com.example.diaryapplication.databinding.FragmentEditEntryBinding
@@ -30,8 +31,6 @@ class EditEntryFragment : Fragment() {
     private lateinit var startTime: Date
     private lateinit var endTime: Date
     private var marker = ""
-
-
 
 
     private lateinit var binding: FragmentEditEntryBinding
@@ -55,15 +54,21 @@ class EditEntryFragment : Fragment() {
         val bundle = EditEntryFragmentArgs.fromBundle(requireArguments())
         val entryId = bundle.argEntryId
         viewModel.getEntry(entryId)
+
+
+
+
+        viewModel.project.observe(viewLifecycleOwner, Observer {
+            binding.project = it
+        })
+
         viewModel.entry.observe(viewLifecycleOwner, Observer {
             binding.entry = it
             startTime = it.startTime
             endTime = it.endTime
-
-
-            calculateTimeDiff(startTime,endTime)
+            calculateTimeDiff(startTime, endTime)
             setUpCheckBox()
-
+            viewModel.getProject(it.projectId)
 
         })
 
@@ -76,31 +81,44 @@ class EditEntryFragment : Fragment() {
         binding.editEntrySaveButton.setOnClickListener {
             viewModel.saveEntry()
         }
+        binding.editEntryProjectLayer.setOnClickListener {
+            viewModel.selectProject()
+        }
+
+        viewModel.selectProjectEvent.observe(viewLifecycleOwner, EventObserver {
+            findNavController()
+                .navigate(
+                    EditEntryFragmentDirections
+                        .actionEditEntryFragmentToEntrySelectProjectFragment(entryId)
+                )
+        })
 
         setUpTimePickerDialog()
 
-        viewModel.saveEntryEvent.observe(viewLifecycleOwner,EventObserver{
+        viewModel.saveEntryEvent.observe(viewLifecycleOwner, EventObserver {
             val name = binding.editEntryName.text.toString()
-            val projectId = 0
-            val timeDiff = calculateTimeDiff(startTime,endTime)
+            val timeDiff = calculateTimeDiff(startTime, endTime)
             val note = binding.editEntryComment.text.toString()
 
-            viewModel.updateEntry(Entry(
-                id = entryId,
-                name = name,
-                projectId = projectId,
-                startTime = startTime,
-                endTime = endTime,
-                startDate = binding.entry!!.startDate,
-                timeDiff = timeDiff,
-                marker = marker,
-                note = note
-            ))
+            viewModel.updateEntry(
+                Entry(
+                    id = entryId,
+                    name = name,
+                    projectId = binding.entry!!.projectId,
+                    startTime = startTime,
+                    endTime = endTime,
+                    startDate = binding.entry!!.startDate,
+                    timeDiff = timeDiff,
+                    marker = marker,
+                    note = note
+                )
+            )
             Toast.makeText(
                 requireContext(),
                 "Entry Updated",
                 Toast.LENGTH_SHORT
             ).show()
+            findNavController().navigateUp()
         })
 
 
@@ -112,14 +130,32 @@ class EditEntryFragment : Fragment() {
 
     private fun setUpCheckBox() {
 
-        checkbox(binding.editEntryCheckBoxStar,"S")
-        checkbox(binding.editEntryCheckBoxNew,"N")
-        checkbox(binding.editEntryCheckBoxFlag,"F")
+        initialSetupMarker()
+
+        checkbox(binding.editEntryCheckBoxStar, "S")
+        checkbox(binding.editEntryCheckBoxNew, "N")
+        checkbox(binding.editEntryCheckBoxFlag, "F")
 
     }
 
+    private fun initialSetupMarker() {
+        val markerString = binding.entry!!.marker
+        if (markerString.contains("S")) {
+            binding.editEntryCheckBoxStar.isChecked = true
+            marker += "S"
+        }
+        if (markerString.contains("N")) {
+            binding.editEntryCheckBoxNew.isChecked = true
+            marker += "N"
+        }
+        if (markerString.contains("F")) {
+            binding.editEntryCheckBoxFlag.isChecked = true
+            marker += "F"
+        }
+    }
+
     private fun checkbox(checkBox: CheckBox, char: String) {
-        checkBox.setOnCheckedChangeListener { buttonView, isChecked ->
+        checkBox.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
                 marker += char
             } else {
@@ -131,7 +167,7 @@ class EditEntryFragment : Fragment() {
         }
     }
 
-    private fun calculateTimeDiff(startTime: Date, endTime: Date) : Int{
+    private fun calculateTimeDiff(startTime: Date, endTime: Date): Int {
 
         val startingHours = SimpleDateFormat("HH").format(startTime).toInt()
         val endingHours = SimpleDateFormat("HH").format(endTime).toInt()
@@ -142,17 +178,17 @@ class EditEntryFragment : Fragment() {
         val start = startingHours * 60 + startingMinutes
         val end = endingHours * 60 + endingMinutes
 
-        val diff  = end - start
-        val diffHours = diff/60
+        val diff = end - start
+        val diffHours = diff / 60
         val diffMinutes = diff % 60
 
         var finalHours = diffHours.toString()
         var finalMinutes = diffMinutes.toString()
 
-        if(diffHours < 10){
+        if (diffHours < 10) {
             finalHours = "0$diffHours"
         }
-        if(diffMinutes < 10){
+        if (diffMinutes < 10) {
             finalMinutes = "0$diffMinutes"
         }
 
@@ -169,21 +205,21 @@ class EditEntryFragment : Fragment() {
         val month = calender.get(Calendar.MONTH)
         val day = calender.get(Calendar.DAY_OF_MONTH)
 
-        val startTimeListener = TimePickerDialog.OnTimeSetListener { view, hourOfDay, minute ->
+        val startTimeListener = TimePickerDialog.OnTimeSetListener { _, hourOfDay, minute ->
             calender.set(year, month, day, hourOfDay, minute)
             startTime = calender.time
             binding.editEntryFrom.text = SimpleDateFormat("h:mm a").format(startTime)
-            calculateTimeDiff(startTime,endTime)
+            calculateTimeDiff(startTime, endTime)
 
 
         }
 
-        val endTimeListener = TimePickerDialog.OnTimeSetListener { view, hourOfDay, minute ->
+        val endTimeListener = TimePickerDialog.OnTimeSetListener { _, hourOfDay, minute ->
             calender.set(year, month, day, hourOfDay, minute)
             endTime = calender.time
             binding.editEntryTo.text = SimpleDateFormat("h:mm a").format(endTime)
 
-            calculateTimeDiff(startTime,endTime)
+            calculateTimeDiff(startTime, endTime)
 
         }
 

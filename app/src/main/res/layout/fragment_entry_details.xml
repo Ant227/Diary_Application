@@ -114,25 +114,48 @@
             app:layout_constraintTop_toBottomOf="@+id/entryDetailsDuration" />
 
         <ImageView
-            android:id="@+id/entryDetailsMarker1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:src="@drawable/ic_baseline_star_24"
-            tools:text="@string/money"
+            android:id="@+id/entryDetailsMarkerStar"
             style="@style/TextAppearance.MaterialComponents.Body1"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:visibility="gone"
+            android:src="@drawable/ic_baseline_star_24"
+            app:starMarker="@{entry.marker}"
             app:layout_constraintStart_toStartOf="@+id/entryDetailsProjectName"
-            app:layout_constraintTop_toBottomOf="@+id/entryDetailsMarkerTitle" />
+            app:layout_constraintTop_toBottomOf="@+id/entryDetailsMarkerTitle"
+            />
+
+        <ImageView
+            android:id="@+id/entryDetailsMarkerNew"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:visibility="gone"
+            app:newMarker="@{entry.marker}"
+            android:layout_marginStart="16dp"
+            app:layout_constraintStart_toEndOf="@+id/entryDetailsMarkerStar"
+            app:layout_constraintTop_toBottomOf="@+id/entryDetailsMarkerTitle"
+            android:src="@drawable/ic_baseline_fiber_new_24" />
+
+        <ImageView
+            android:id="@+id/entryDetailsMarkerFlag"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:visibility="gone"
+            app:flagMarker="@{entry.marker}"
+            android:layout_marginStart="16dp"
+            app:layout_constraintStart_toEndOf="@+id/entryDetailsMarkerNew"
+            app:layout_constraintTop_toBottomOf="@+id/entryDetailsMarkerTitle"
+            android:src="@drawable/ic_baseline_flag_24" />
 
         <TextView
             android:id="@+id/entryDetailsNoteTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="56dp"
             android:padding="8dp"
             android:text="@string/note"
             app:layout_constraintStart_toStartOf="@+id/entryDetailsProjectName"
-            app:layout_constraintTop_toBottomOf="@+id/entryDetailsMarker1" />
+            app:layout_constraintTop_toBottomOf="@+id/entryDetailsMarkerTitle" />
 
         <TextView
             android:id="@+id/entryDetailsNote"
@@ -163,6 +186,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:focusable="true" />
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -10,9 +10,9 @@ import java.util.*
 @Parcelize
 @Entity(tableName = "entry_table")
 data class Entry(
-    @PrimaryKey(autoGenerate = true) var id: Int = 0,
+    @PrimaryKey(autoGenerate = true) var id: Long = 0,
     @ColumnInfo(name = "name") val name: String,
-    @ColumnInfo(name = "projectId")val  projectId: Int,
+    @ColumnInfo(name = "projectId")val  projectId: Long,
     @ColumnInfo(name = "startTime")val  startTime: Date,
     @ColumnInfo(name = "endTime")val  endTime: Date,
     @ColumnInfo(name = "timeDiff")val  timeDiff: Int,

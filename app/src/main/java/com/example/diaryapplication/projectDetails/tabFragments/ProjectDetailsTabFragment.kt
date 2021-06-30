@@ -16,7 +16,7 @@ import com.example.diaryapplication.editproject.EditProjectViewModel
 import com.example.diaryapplication.projectDetails.ProjectDetailsFragmentDirections
 
 
-class ProjectDetailsTabFragment(private val projectId: Int) : Fragment() {
+class ProjectDetailsTabFragment(private val projectId: Long) : Fragment() {
 
     private lateinit var binding: TabFragmentProjectDetailsBinding
 

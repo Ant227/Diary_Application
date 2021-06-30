@@ -17,7 +17,7 @@ class ProjectDetailsFragment : Fragment() {
 
     private lateinit var binding: FragmentProjectDetailsBinding
 
-    var projectId = 0
+    var projectId : Long = 0
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

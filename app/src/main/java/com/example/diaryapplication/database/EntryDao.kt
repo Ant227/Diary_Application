@@ -13,9 +13,14 @@ interface EntryDao {
     @Update
     suspend fun updateEntry(entry: Entry)
 
+    @Query("UPDATE entry_table SET projectId = :projectId WHERE id = :entryId")
+   suspend fun updateEntryProject(entryId : Long ,projectId: Long)
+
     @Query("SELECT * FROM entry_table")
     fun getAllEntries(): LiveData<List<Entry>>
 
+
+
     @Query("SELECT * FROM entry_table WHERE id = :id")
-    suspend fun getEntry(id: Int): Entry
+    suspend fun getEntry(id: Long): Entry
 }

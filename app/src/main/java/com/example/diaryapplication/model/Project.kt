@@ -10,7 +10,7 @@ import java.util.*
 @Parcelize
 @Entity(tableName = "project_table")
 data class Project(
-    @PrimaryKey(autoGenerate = true) var id: Int = 0,
+    @PrimaryKey(autoGenerate = true) var id: Long = 0,
     @ColumnInfo(name = "name") val name: String,
     @ColumnInfo(name = "area")val  area: String,
     @ColumnInfo(name = "status")val  status: String,
