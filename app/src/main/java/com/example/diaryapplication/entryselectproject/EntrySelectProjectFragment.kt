@@ -13,6 +13,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.room.util.DBUtil
 import com.example.diaryapplication.EventObserver
 import com.example.diaryapplication.ProjectsList.ProjectListAdapter
+import com.example.diaryapplication.ProjectsList.bottomsheet.BottomSheetFragment
 import com.example.diaryapplication.R
 import com.example.diaryapplication.databinding.FragmentEditProjectBinding
 import com.example.diaryapplication.databinding.FragmentEntrySelectProjectBinding
@@ -54,15 +55,20 @@ class EntrySelectProjectFragment : Fragment(),EntrySelectProjectListener {
             adapter.submitList(it)
         })
 
-
-
-
-
-        viewModel.selectedProjectEvent.observe(viewLifecycleOwner, EventObserver{
+     viewModel.selectedProjectEvent.observe(viewLifecycleOwner, EventObserver{
             val action = EntrySelectProjectFragmentDirections
                 .actionEntrySelectProjectFragmentToEditEntryFragment(entryId)
             viewModel.updateSelectedProject(entryId,projectId)
             findNavController().navigate(action)
+        })
+
+        binding.entrySelectProjectFab.setOnClickListener {
+            viewModel.createProject()
+        }
+
+        viewModel.createProjectEvent.observe(viewLifecycleOwner,EventObserver{
+            val bottomSheetFragment = BottomSheetFragment()
+            bottomSheetFragment.show(requireActivity().supportFragmentManager, "BottomSheetAddProjectDialog")
         })
 
 

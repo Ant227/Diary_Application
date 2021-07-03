@@ -195,7 +195,7 @@ class EditProjectFragment : Fragment(){
 
     @SuppressLint("SimpleDateFormat")
     private fun setupDatePicker(){
-        val startDateListener = DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
+        val startDateListener = DatePickerDialog.OnDateSetListener { _, year, month, dayOfMonth ->
             val cal = Calendar.getInstance()
             cal.set(year,month,dayOfMonth)
             startDate = cal.time
@@ -206,11 +206,11 @@ class EditProjectFragment : Fragment(){
 
 
         }
-        val endDateListener = DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
+        val endDateListener = DatePickerDialog.OnDateSetListener { _, year, month, dayOfMonth ->
             val cal = Calendar.getInstance()
             cal.set(year,month,dayOfMonth)
             endDate = cal.time
-            binding.endDatePicker.text = SimpleDateFormat("MMM, dd yyyy").format(endDate)
+            binding.endDatePicker.text = SimpleDateFormat("MMM, dd yyyy").format(endDate!!)
             endDay = dayOfMonth.toString()
             endMonth = month.toString()
             endYear = year.toString()

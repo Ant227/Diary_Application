@@ -21,6 +21,14 @@ class EntrySelectProjectViewModel(application: Application) : AndroidViewModel(a
     val selectedProjectEvent: LiveData<Event<Unit>>
         get()  = _selectedProjectEvent
 
+    private val _createProjectEvent = MutableLiveData<Event<Unit>>()
+    val createProjectEvent: LiveData<Event<Unit>>
+        get()  = _createProjectEvent
+
+    fun createProject(){
+        _createProjectEvent.value = Event(Unit)
+    }
+
     fun updateSelectedProject(entryId: Long ,projectId : Long){
         viewModelScope.launch {
             projectDatabase.entryDao.updateEntryProject(entryId,projectId)
