@@ -1,25 +1,25 @@
-package com.example.diaryapplication.mainscreen
+package com.example.diaryapplication.projectDetails.tabFragments
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.diaryapplication.databinding.EntryItemMainBinding
+import com.example.diaryapplication.databinding.EntryItemProjectBinding
 import com.example.diaryapplication.model.Entry
 
 
-class EntryListAdapter(private val clickListener:EntryListener) :
-    ListAdapter<Entry, EntryViewHolder>(ProjectDiffCallback())
+class ProjectEntryListAdapter(private val clickListener:ProjectEntryListener) :
+    ListAdapter<Entry, ProjectEntryViewHolder>(ProjectDiffCallback())
 {
 
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EntryViewHolder {
-        return EntryViewHolder.from(parent)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProjectEntryViewHolder {
+        return ProjectEntryViewHolder.from(parent)
     }
 
-    override fun onBindViewHolder(holder: EntryViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ProjectEntryViewHolder, position: Int) {
         val entryItem = getItem(position) as Entry
         holder.itemView.setOnClickListener {
             clickListener.onClick(entryItem)
@@ -29,8 +29,10 @@ class EntryListAdapter(private val clickListener:EntryListener) :
 
 
 }
-class EntryViewHolder(private val binding: EntryItemMainBinding) : RecyclerView.ViewHolder(
+class ProjectEntryViewHolder(private val binding: EntryItemProjectBinding) : RecyclerView.ViewHolder(
     binding.root) {
+
+
 
     fun bind(item: Entry){
         binding.entry = item
@@ -38,10 +40,10 @@ class EntryViewHolder(private val binding: EntryItemMainBinding) : RecyclerView.
     }
 
     companion object{
-        fun from(parent: ViewGroup) : EntryViewHolder{
+        fun from(parent: ViewGroup) : ProjectEntryViewHolder{
             val layoutInflater = LayoutInflater.from(parent.context)
-            val binding = EntryItemMainBinding.inflate(layoutInflater)
-            return EntryViewHolder(binding )
+            val binding = EntryItemProjectBinding.inflate(layoutInflater)
+            return ProjectEntryViewHolder(binding)
         }
     }
 
@@ -58,6 +60,6 @@ class ProjectDiffCallback : DiffUtil.ItemCallback<Entry>() {
 
 
 
-interface EntryListener {
+interface ProjectEntryListener {
     fun onClick(entry: Entry)
 }

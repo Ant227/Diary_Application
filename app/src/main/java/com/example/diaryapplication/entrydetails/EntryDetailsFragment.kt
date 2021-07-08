@@ -42,11 +42,12 @@ class EntryDetailsFragment : Fragment() {
 
         viewModel.entry.observe(viewLifecycleOwner, Observer {
             binding.entry = it
-            viewModel.getProject(it.projectId)
+                       viewModel.getProject(it.projectId)
         })
 
         viewModel.project.observe(viewLifecycleOwner, Observer {
             binding.project = it
+
         })
 
         viewModel.openEditEntryEvent.observe(viewLifecycleOwner, EventObserver {

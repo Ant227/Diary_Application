@@ -12,13 +12,14 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <RelativeLayout
             android:id="@+id/projectDetailsRelativeLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/holo_blue_bright"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:statusAgeLayoutColor="@{project.status}"
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
@@ -27,7 +28,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:padding="8dp"
-                android:text="@string/status" />
+                android:text="@{project.status}" />
 
             <TextView
                 android:id="@+id/projectDetailsAge"
@@ -35,7 +36,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:padding="8dp"
-                android:text="@string/age"
+                app:endDate="@{project.endDate}"
+                app:startDate="@{project.startDate}"
                 android:layout_marginEnd="16dp"/>
         </RelativeLayout>
 
@@ -132,26 +134,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/entryDetailsMarkerTitle" />
 
-        <TextView
-            android:id="@+id/projectDetailsTagTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:padding="8dp"
-            android:text="@string/tags"
-            app:layout_constraintStart_toStartOf="@+id/projectDetailsTag"
-            app:layout_constraintTop_toBottomOf="@+id/projectDetailsArea" />
 
-        <TextView
-            android:id="@+id/projectDetailsTag"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:padding="8dp"
-            android:text="@string/tags_example"
-            style="@style/TextAppearance.MaterialComponents.Body1"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/projectDetailsTagTitle" />
 
         <TextView
             android:id="@+id/projectDetailsCommentTitle"
@@ -161,7 +144,7 @@
             android:padding="8dp"
             android:text="@string/comment"
             app:layout_constraintStart_toStartOf="@+id/projectDetailsComment"
-            app:layout_constraintTop_toBottomOf="@+id/projectDetailsTag" />
+            app:layout_constraintTop_toBottomOf="@+id/projectDetailsArea" />
 
         <TextView
             android:id="@+id/projectDetailsComment"

@@ -176,6 +176,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="8dp"
+            app:timeInterval="@{entry.timeDiff}"
             app:layout_constraintStart_toEndOf="@+id/editEntryTimeTitle"
             app:layout_constraintTop_toTopOf="@+id/editEntryDate"
             tools:text="@string/sample_time"/>

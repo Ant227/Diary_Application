@@ -105,6 +105,8 @@ class EditEntryFragment : Fragment() {
                     id = entryId,
                     name = name,
                     projectId = binding.entry!!.projectId,
+                    projectName = binding.project!!.name,
+                    projectColor = binding.project!!.color,
                     startTime = startTime,
                     endTime = endTime,
                     startDate = binding.entry!!.startDate,
@@ -179,23 +181,11 @@ class EditEntryFragment : Fragment() {
         val end = endingHours * 60 + endingMinutes
 
         val diff = end - start
-        val diffHours = diff / 60
-        val diffMinutes = diff % 60
 
-        var finalHours = diffHours.toString()
-        var finalMinutes = diffMinutes.toString()
-
-        if (diffHours < 10) {
-            finalHours = "0$diffHours"
-        }
-        if (diffMinutes < 10) {
-            finalMinutes = "0$diffMinutes"
-        }
-
-        binding.editEntryTime.text = "$finalHours:$finalMinutes"
+        val diffDouble : Double = String.format("%.2f", diff.toDouble()/60).toDouble()
+        binding.editEntryTime.text = "$diffDouble"
 
         return diff
-
 
     }
 

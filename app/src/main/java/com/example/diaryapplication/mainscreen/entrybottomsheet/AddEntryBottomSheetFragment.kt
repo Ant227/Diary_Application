@@ -56,7 +56,9 @@ class AddEntryBottomSheetFragment : BottomSheetDialogFragment(){
                 viewModel.bottomsheetAddEntry(
                     Entry(
                         name = name,
-                       projectId =  0,
+                       projectId =  -1,
+                        projectName = "",
+                        projectColor = null,
                      startTime =    Date(),
                       endTime =   Date(),
                         timeDiff = 0,

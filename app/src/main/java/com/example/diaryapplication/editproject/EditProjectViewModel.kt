@@ -62,5 +62,16 @@ class EditProjectViewModel(application : Application) : AndroidViewModel(applica
         }
     }
 
+    fun updateEntry(projectId:Long, projectName:String, projectColor:Int){
+        viewModelScope.launch {
+            try {
+                database.entryDao.updateEntryProjectNameColor(projectId,projectName,projectColor)
+                Log.i("EditProjectViewModel","updating Entry.")
+            }catch (e: Exception){
+                Log.i("EditProjectViewModel","Error updating Entry.")
+            }
+        }
+    }
+
 
 }

@@ -55,6 +55,9 @@
             android:id="@+id/action_projectDetailsFragment_to_editProjectFragment2"
             app:destination="@id/editProjectFragment"
             app:popUpTo="@id/projectDetailsFragment" />
+        <action
+            android:id="@+id/action_projectDetailsFragment_to_entryDetailsFragment"
+            app:destination="@id/entryDetailsFragment" />
     </fragment>
     <fragment
         android:id="@+id/entryDetailsFragment"

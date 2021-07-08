@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import com.example.diaryapplication.R
 import com.example.diaryapplication.databinding.FragmentProjectDetailsBinding
 import com.example.diaryapplication.projectDetails.tabFragments.ProjectDetailsTabFragment
@@ -16,8 +18,10 @@ import com.google.android.material.tabs.TabLayoutMediator
 class ProjectDetailsFragment : Fragment() {
 
     private lateinit var binding: FragmentProjectDetailsBinding
+    private lateinit var viewModel: ProjectDetailsViewModel
 
-    var projectId : Long = 0
+     private var projectId : Long = 0
+    private var  numberOfEntries : Int = 0
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,7 +36,14 @@ class ProjectDetailsFragment : Fragment() {
         binding.lifecycleOwner = this
         val bundle = ProjectDetailsFragmentArgs.fromBundle(requireArguments())
         projectId = bundle.argId
-        setupViewPager()
+
+        val application = requireNotNull(this.activity).application
+        val viewModelFactory = ProjectDetailsViewModelFactory(application,projectId)
+        viewModel =
+            ViewModelProvider(
+                this, viewModelFactory).get(ProjectDetailsViewModel::class.java)
+
+            setupViewPager()
 
 
 
@@ -43,8 +54,8 @@ class ProjectDetailsFragment : Fragment() {
 
     private fun setupViewPager() {
        val adapter = ViewPager2Adapter(requireActivity().supportFragmentManager,lifecycle)
-        adapter.addFragment(ProjectDetailsTabFragment(projectId = projectId))
-        adapter.addFragment(ProjectEntryDetailsTabFragment())
+        adapter.addFragment(ProjectDetailsTabFragment( projectId))
+        adapter.addFragment(ProjectEntryDetailsTabFragment(projectId))
 
         binding.projectDetailsViewPager.adapter = adapter
         TabLayoutMediator(binding.projectDetailsTabLayout,binding.projectDetailsViewPager)
@@ -55,7 +66,12 @@ class ProjectDetailsFragment : Fragment() {
                     tab.text = "INFO"
                 }
                 1->{
-                    tab.text = "Entries"
+                    viewModel.numberOfEntries.observe(viewLifecycleOwner, Observer {
+                        numberOfEntries  = it
+                        tab.text = "Entries($numberOfEntries)"
+                    })
+
+
                 }
 
             }

@@ -18,6 +18,10 @@ interface ProjectDao{
     @Query("SELECT * FROM project_table WHERE id = :id")
     suspend fun getProject(id: Long): Project
 
+    @Query("SELECT name FROM project_table WHERE id = :id")
+    suspend fun getProjectName(id: Long): String
+
+
     @Query("SELECT * FROM project_table WHERE area = :area")
     fun getProjectsByArea(area : String): LiveData<List<Project>>
 
