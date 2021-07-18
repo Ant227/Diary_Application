@@ -22,7 +22,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import java.util.*
 
 
-class AddEntryBottomSheetFragment : BottomSheetDialogFragment(){
+class AddEntryBottomSheetFragment(private val date : Date) : BottomSheetDialogFragment(){
 
     private lateinit var binding : FragmentAddEntryBottomSheetBinding
 
@@ -62,7 +62,7 @@ class AddEntryBottomSheetFragment : BottomSheetDialogFragment(){
                      startTime =    Date(),
                       endTime =   Date(),
                         timeDiff = 0,
-                      startDate =   Date(),
+                      startDate =   date,
                        marker = "",
                         note = ""
                         )

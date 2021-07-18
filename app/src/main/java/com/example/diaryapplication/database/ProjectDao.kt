@@ -31,5 +31,8 @@ interface ProjectDao{
     @Query("SELECT * FROM project_table WHERE area = :area AND status = :status")
     fun getFilterProjects(area: String,status : String): LiveData<List<Project>>
 
+    @Query("UPDATE project_table SET lastEntryDate = :entryDate  WHERE id = :projectId")
+    suspend fun updateEntryProjectNameColor(entryDate: Date,projectId: Long)
+
 
 }

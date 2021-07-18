@@ -13,6 +13,7 @@
             type="com.example.diaryapplication.model.Project" />
     </data>
 
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -28,16 +29,18 @@
             android:text="@string/project_name"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
             android:id="@+id/entryDetailsProjectName"
             style="@style/TextAppearance.MaterialComponents.Headline6"
-            android:layout_width="wrap_content"
+            setValue="@{project.name}"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:padding="8dp"
-            android:text="@{project.name}"
-            tools:text="@string/project_name"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@id/entryDetailsProjectTitle"
-            app:layout_constraintTop_toBottomOf="@id/entryDetailsProjectTitle" />
+            app:layout_constraintTop_toBottomOf="@id/entryDetailsProjectTitle"
+            tools:text="@string/project_name" />
 
         <TextView
             android:id="@+id/entryDetailsEntryTitle"
@@ -161,14 +164,12 @@
             android:id="@+id/entryDetailsNote"
             style="@style/TextAppearance.MaterialComponents.Body1"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
             android:padding="8dp"
-            android:text="@{entry.note}"
-            android:scrollbars="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
+            setValue="@{entry.note}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@id/entryDetailsProjectName"
             app:layout_constraintTop_toBottomOf="@+id/entryDetailsNoteTitle" />

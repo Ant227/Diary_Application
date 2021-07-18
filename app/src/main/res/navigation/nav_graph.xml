@@ -72,6 +72,10 @@
             app:destination="@id/editEntryFragment"
             app:popUpTo="@id/entryDetailsFragment"
             app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_entryDetailsFragment_to_entrySelectProjectFragment"
+            app:destination="@id/entrySelectProjectFragment"
+            app:popUpTo="@id/entryDetailsFragment" />
     </fragment>
     <fragment
         android:id="@+id/editEntryFragment"

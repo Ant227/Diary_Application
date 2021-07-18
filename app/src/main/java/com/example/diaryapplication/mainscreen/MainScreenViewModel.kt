@@ -36,6 +36,10 @@ class MainScreenViewModel(application: Application) : AndroidViewModel(applicati
     val openProjectEvent: LiveData<Event<Unit>>
     get()  = _openProjectEvent
 
+    private val _backUpEvent = MutableLiveData<Event<Unit>>()
+    val backUpEvent: LiveData<Event<Unit>>
+        get()  = _backUpEvent
+
     private val _openBottomSheetEvent = MutableLiveData<Event<Unit>>()
     val openBottomSheetEvent: LiveData<Event<Unit>>
         get()  = _openBottomSheetEvent
@@ -58,6 +62,10 @@ class MainScreenViewModel(application: Application) : AndroidViewModel(applicati
 
     fun openProjectList(){
         _openProjectEvent.value = Event(Unit)
+    }
+
+    fun backupDatabase(){
+        _backUpEvent.value = Event(Unit)
     }
 
     fun openBottomSheet(){

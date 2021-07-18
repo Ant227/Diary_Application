@@ -27,6 +27,13 @@ class EntryDetailsViewModel(application:Application) : AndroidViewModel(applicat
     val openEditEntryEvent: LiveData<Event<Unit>>
         get()  = _openEditEntryEvent
 
+    private val _selectProjectEvent = MutableLiveData<Event<Unit>>()
+    val selectProjectEvent: LiveData<Event<Unit>>
+        get() = _selectProjectEvent
+
+    fun selectProject(){
+        _selectProjectEvent.value = Event(Unit)
+    }
 
     fun openEditEntry(){
         _openEditEntryEvent.value = Event(Unit)

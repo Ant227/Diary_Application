@@ -2,6 +2,7 @@ package com.example.diaryapplication.editentry
 
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -32,6 +33,11 @@ class EditEntryFragment : Fragment() {
     private lateinit var endTime: Date
     private var marker = ""
 
+    private var projectId : Long = -1
+    private var projectName : String = ""
+    private var projectColor : Int = Color.GREEN
+
+    private lateinit var startDate : Date
 
     private lateinit var binding: FragmentEditEntryBinding
 
@@ -56,16 +62,23 @@ class EditEntryFragment : Fragment() {
         viewModel.getEntry(entryId)
 
 
+        viewModel.project.observe(viewLifecycleOwner, Observer { project ->
+            project?.let {
+                binding.project = project
+                projectId = project.id
+                project.color?.let {
+                    projectColor = project.color
+                }
+                projectName = project.name
+            }
 
-
-        viewModel.project.observe(viewLifecycleOwner, Observer {
-            binding.project = it
         })
 
         viewModel.entry.observe(viewLifecycleOwner, Observer {
             binding.entry = it
             startTime = it.startTime
             endTime = it.endTime
+            startDate = it.startDate
             calculateTimeDiff(startTime, endTime)
             setUpCheckBox()
             viewModel.getProject(it.projectId)
@@ -104,17 +117,22 @@ class EditEntryFragment : Fragment() {
                 Entry(
                     id = entryId,
                     name = name,
-                    projectId = binding.entry!!.projectId,
-                    projectName = binding.project!!.name,
-                    projectColor = binding.project!!.color,
+                    projectId = projectId,
+                    projectName = projectName,
+                    projectColor = projectColor,
                     startTime = startTime,
                     endTime = endTime,
-                    startDate = binding.entry!!.startDate,
+                    startDate = startDate,
                     timeDiff = timeDiff,
                     marker = marker,
                     note = note
                 )
             )
+
+            if(projectId > -1 ){
+                viewModel.updateProjectEntryDate(startDate,projectId)
+            }
+
             Toast.makeText(
                 requireContext(),
                 "Entry Updated",

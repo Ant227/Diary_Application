@@ -39,6 +39,14 @@ class EntryDetailsFragment : Fragment() {
         binding.entryDetailsFab.setOnClickListener {
             viewModel.openEditEntry()
         }
+        binding.entryDetailsProjectName.setOnClickListener {
+            viewModel.selectProject()
+        }
+
+        viewModel.selectProjectEvent.observe(viewLifecycleOwner,EventObserver{
+            val action = EntryDetailsFragmentDirections.actionEntryDetailsFragmentToEntrySelectProjectFragment(entryId)
+            findNavController().navigate(action)
+        })
 
         viewModel.entry.observe(viewLifecycleOwner, Observer {
             binding.entry = it

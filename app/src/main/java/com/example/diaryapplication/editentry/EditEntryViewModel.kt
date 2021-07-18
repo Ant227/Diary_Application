@@ -12,6 +12,7 @@ import com.example.diaryapplication.model.Entry
 import com.example.diaryapplication.model.Project
 import kotlinx.coroutines.launch
 import java.lang.Exception
+import java.util.*
 
 class EditEntryViewModel(application: Application) : AndroidViewModel(application) {
 
@@ -75,9 +76,19 @@ class EditEntryViewModel(application: Application) : AndroidViewModel(applicatio
         viewModelScope.launch {
             try {
                 projectDatabase.entryDao.updateEntry(entry)
-                Log.i("EditEntryViewModel", "updating Entry.")
+                Log.i("EditEntryViewModel", "Entry Updated.")
             } catch (e: Exception) {
                 Log.i("EditEntryViewModel", "Error updating Entry.")
+            }
+        }
+    }
+    fun updateProjectEntryDate(entryDate: Date, projectId : Long) {
+        viewModelScope.launch {
+            try {
+                projectDatabase.projectDao.updateEntryProjectNameColor(entryDate,projectId)
+                Log.i("EditEntryViewModel", " Project Updated.")
+            } catch (e: Exception) {
+                Log.i("EditEntryViewModel", "Error updating Project.")
             }
         }
     }

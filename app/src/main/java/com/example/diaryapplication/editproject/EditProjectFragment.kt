@@ -2,6 +2,7 @@ package com.example.diaryapplication.editproject
 
 import android.annotation.SuppressLint
 import android.app.DatePickerDialog
+import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import android.text.TextUtils
@@ -32,9 +33,10 @@ import java.util.*
 class EditProjectFragment : Fragment(){
 
     private lateinit var binding: FragmentEditProjectBinding
-    private var color: Int? = 0
+    private var color: Int? = null
     private var area = ""
     private var status = ""
+    private lateinit var  lastEntryDate : Date
 
     private var startDay = "0"
     private var startMonth = "0"
@@ -75,6 +77,7 @@ class EditProjectFragment : Fragment(){
             color = it.color
             area = it.area
             status = it.status
+            lastEntryDate = it.lastEntryDate
 
             //setup date
             it.startDate?.let {
@@ -103,7 +106,7 @@ class EditProjectFragment : Fragment(){
             val name = binding.projectNameEditText.text.toString()
             val comment = binding.editProjectComment.text.toString()
 
-            if (!TextUtils.isEmpty(name) && !TextUtils.equals(color.toString(), "0")) {
+            if (!TextUtils.isEmpty(name) && color != null) {
                 viewModel.updateProject(
                     Project(
                          projectId,
@@ -114,18 +117,36 @@ class EditProjectFragment : Fragment(){
                         "",
                         startDate,
                         endDate,
-                       comment
+                       comment,
+                        lastEntryDate
                     )
                 )
+
                 viewModel.updateEntry(projectId,name,color!!)
                 findNavController().navigate(EditProjectFragmentDirections.
                 actionEditProjectFragmentToProjectDetailsFragment(projectId))
             } else {
-                Toast.makeText(
-                    requireContext(),
-                    "Please Enter Project name and Color",
-                    Toast.LENGTH_SHORT
-                ).show()
+                if(TextUtils.isEmpty(name)){
+                    Toast.makeText(
+                        requireContext(),
+                        "Please enter project name.",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }else if(TextUtils.isEmpty(name) && color == null){
+                    Toast.makeText(
+                        requireContext(),
+                        "Please enter project name and select project color",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+                else{
+                    Toast.makeText(
+                        requireContext(),
+                        "Please select project color",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+
             }
         })
         setupDatePicker()

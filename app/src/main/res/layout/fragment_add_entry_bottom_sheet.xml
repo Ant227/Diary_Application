@@ -16,25 +16,28 @@
 
         <Button
             android:id="@+id/bottomsheet_addEntryButton"
-            android:layout_width="match_parent"
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            android:text="@string/add_entry"
+            android:layout_marginEnd="16dp"
+            android:text="@string/add"
+            app:layout_constraintBottom_toBottomOf="@+id/bottomsheet_entry_name"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="@+id/bottomsheet_entry_name" />
 
         <EditText
             android:id="@+id/bottomsheet_entry_name"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
+            android:layout_marginStart="8dp"
             android:ems="10"
             android:hint="@string/enter_entry_name"
             android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/bottomsheet_addEntryButton"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/bottomsheet_addEntryButton" />
+            app:layout_constraintTop_toTopOf="parent" />
 
 
 

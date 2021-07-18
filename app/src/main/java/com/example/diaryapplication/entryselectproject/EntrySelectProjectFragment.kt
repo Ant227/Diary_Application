@@ -1,5 +1,6 @@
 package com.example.diaryapplication.entryselectproject
 
+import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -51,15 +52,13 @@ class EntrySelectProjectFragment : Fragment(),EntrySelectProjectListener {
         binding.entrySelectProjectRecyclerView.adapter = adapter
 
 
-        viewModel.projects.observe(viewLifecycleOwner, Observer {
-            adapter.submitList(it)
+        viewModel.projects.observe(viewLifecycleOwner, Observer { it ->
+            adapter.submitList((it.sortedBy { it.lastEntryDate }).reversed())
         })
 
      viewModel.selectedProjectEvent.observe(viewLifecycleOwner, EventObserver{
-            val action = EntrySelectProjectFragmentDirections
-                .actionEntrySelectProjectFragmentToEditEntryFragment(entryId)
             viewModel.updateSelectedProject(entryId,projectId)
-            findNavController().navigate(action)
+         findNavController().navigateUp()
         })
 
         binding.entrySelectProjectFab.setOnClickListener {
@@ -78,5 +77,11 @@ class EntrySelectProjectFragment : Fragment(),EntrySelectProjectListener {
     override fun onClick(project: Project) {
         projectId = project.id
         viewModel.selectedProject()
+        if(project.color == null){
+            viewModel.updateEntry(project.id,project.name, Color.BLACK)
+        }else{
+            viewModel.updateEntry(project.id,project.name,project.color)
+        }
+
     }
 }

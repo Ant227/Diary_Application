@@ -19,5 +19,6 @@ data class Project(
     @ColumnInfo(name = "startDate")val  startDate: Date?,
     @ColumnInfo(name = "endDate")val  endDate: Date?,
     @ColumnInfo(name = "comment")val  comment: String,
+    @ColumnInfo(name = "lastEntryDate")val  lastEntryDate: Date
     ) : Parcelable
 
